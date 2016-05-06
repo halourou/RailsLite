@@ -28,7 +28,9 @@ As in Rails, the application is expected to have a "views" folder that contains 
 
 The controller's instance variables are then bound to the ERB template and content is rendered using the render_content method.
 
+'''
   code(render_content(ERB.new(template_code).result(binding), "text/html"))
+'''
 
 ##Technologies Used:
 
