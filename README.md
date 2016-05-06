@@ -14,7 +14,7 @@ These methods provide controller actions to build out the HTTP response and caus
 
 RailsLite supports rendering using erb templates. This method constructs a path to the appropriate template file:
 
-
+```
   direc_path = File.dirname(__FILE__)
   controller_name = self.class.name.underscore.chomp("_controller")
 
@@ -23,6 +23,7 @@ RailsLite supports rendering using erb templates. This method constructs a path 
     "views", controller_name,
     "#{template_name}.html.erb"
   )
+```
 
 As in Rails, the application is expected to have a "views" folder that contains folders that correspond to the names of the controllers in the application. These folders, in turn, may contain erb templates that correspond to controller actions (such as "new", "show", "index", etc) and will direct the displaying of content on the page.
 
