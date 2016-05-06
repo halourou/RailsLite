@@ -2,13 +2,23 @@
 
 Uses Ruby meta-programming abilities to recreate some of the basic functionality of Rails.
 
+A few methods are described in more detail below. To take a closer look at all the capabilities, run the following spec files:
+
+- controller_spec.rb
+- integration_spec.rb
+- params_spec.rb
+- router_spec.rb
+- session_spec.rb
+- template_spec.rb
+
+
 ## ControllerBase
 
-ControllerBase class provides similar functionality as ActionController::Base in Rails. A few highlights:
+ControllerBase class provides similar functionality as ActionController::Base in Rails.
 
-The **render_content(content, content_type)** & **redirect_to(url)** methods provide controller actions to build out the HTTP response and cause the desired content to be rendered.
+* **render_content(content, content_type)** & **redirect_to(url)** methods provide controller actions to build out the HTTP response and cause the desired content to be rendered.
 
-The **render_template(template_name)** allows rendering using erb templates. This method will construct a path to the appropriate template file:
+* The **render_template(template_name)** allows rendering using erb templates. This method will construct a path to the appropriate template file:
 
 ```
   direc_path = File.dirname(__FILE__)
