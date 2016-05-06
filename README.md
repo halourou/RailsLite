@@ -4,15 +4,11 @@ Uses Ruby meta-programming abilities to recreate some of the basic functionality
 
 ## ControllerBase
 
-ControllerBase class provides similar functionality as ActionController::Base in Rails.
+ControllerBase class provides similar functionality as ActionController::Base in Rails. A few highlights:
 
-**render_content(content, content_type)** and **redirect_to(url)**
+The **render_content(content, content_type)** & **redirect_to(url)** methods provide controller actions to build out the HTTP response and cause the desired content to be rendered.
 
-These methods provide controller actions to build out the HTTP response and cause the desired content to be rendered.
-
-**render_template(template_name)**
-
-RailsLite supports rendering using erb templates. This method constructs a path to the appropriate template file:
+The **render_template(template_name)** allows rendering using erb templates. This method will construct a path to the appropriate template file:
 
 ```
   direc_path = File.dirname(__FILE__)
@@ -25,9 +21,9 @@ RailsLite supports rendering using erb templates. This method constructs a path 
   )
 ```
 
-As in Rails, the application is expected to have a "views" folder that contains folders that correspond to the names of the controllers in the application. These folders, in turn, may contain erb templates that correspond to controller actions (such as "new", "show", "index", etc) and will direct the displaying of content on the page.
+As in Rails, the application should have a "views" folder which will contain folders that correspond to the names of the controllers in the application. These folders, in turn, may contain erb templates that correspond to controller actions (such as "new", "show", "index", etc).
 
-The controller's instance variables are then bound to the ERB template and content is rendered using the render_content method.
+The controller's instance variables are then bound to the ERB template and content is rendered using the render_content method:
 
 ```
   render_content(ERB.new(template_code).result(binding), "text/html")
