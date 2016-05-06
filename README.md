@@ -1,8 +1,8 @@
 ##Rails Lite
 
-Recreates some of the basic functionality of Rails.
+Uses Ruby meta-programming abilities to recreate some of the basic functionality of Rails.
 
-#Technologies Used:
+##Technologies Used:
 
 - ActiveSupport
 - erb
