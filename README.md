@@ -16,7 +16,7 @@ A few methods are described in more detail below. To take a closer look at all t
 
 ControllerBase class provides similar functionality as ActionController::Base in Rails.
 
-* **render_content(content, content_type)** & **redirect_to(url)** methods provide controller actions to build out the HTTP response and cause the desired content to be rendered.
+* The **render_content(content, content_type)** and the **redirect_to(url)** methods provide controller actions to build out the HTTP response and cause the desired content to be rendered.
 
 * The **render_template(template_name)** allows rendering using erb templates. This method will construct a path to the appropriate template file:
 
@@ -31,9 +31,9 @@ ControllerBase class provides similar functionality as ActionController::Base in
   )
 ```
 
-As in Rails, the application should have a "views" folder which will contain folders that correspond to the names of the controllers in the application. These folders, in turn, may contain erb templates that correspond to controller actions (such as "new", "show", "index", etc).
+  As in Rails, the application should have a "views" folder which will contain folders that correspond to the names of the controllers in the application. These folders, in turn, may contain erb templates that correspond to controller actions (such as "new", "show", "index", etc).
 
-The controller's instance variables are then bound to the ERB template and content is rendered using the render_content method:
+  The controller's instance variables are then bound to the ERB template and content is rendered using the render_content method:
 
 ```
   render_content(ERB.new(template_code).result(binding), "text/html")
