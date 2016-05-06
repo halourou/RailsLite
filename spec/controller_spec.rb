@@ -72,6 +72,7 @@ describe ControllerBase do
         users_controller2.redirect_to("http://google.com")
         expect(users_controller2.already_built_response?).to be_truthy
       end
+      
 
       it "raises an error when attempting to render twice" do
         users_controller2.redirect_to("http://google.com")
